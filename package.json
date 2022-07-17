@@ -2,6 +2,9 @@
   "name": "electronjs-website",
   "version": "1.0.0",
   "description": "The website for Electron",
+  "repository": "https://github.com/Akshit1025/electronjs-website",
+  "license": "MIT",
+  "author": "Akshit Gupta",
   "scripts": {
     "start": "cross-env NODE_OPTIONS='--max_old_space_size=4096' NODE_PATH=. NODE_ENV=production node server.js",
     "bootstrap": "node script/bootstrap",
@@ -77,5 +80,54 @@
     "set-query-string": "^2.2.0",
     "tocbot": "^4.18.2",
     "ultimate-pagination": "^1.0.0"
+  },
+  "devDependencies": {
+    "@octokit/action": "^4.0.4",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.13",
+    "babel-loader": "^8.2.5",
+    "browser-sync": "^2.27.10",
+    "chai": "^4.3.6",
+    "chai-cheerio": "^1.0.0",
+    "check-for-leaks": "^1.2.1",
+    "cypress": "^10.3.0",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "globby": "^13.1.2",
+    "handlebars-loader": "^1.7.2",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "mocha": "^10.0.0",
+    "nock": "^13.2.8",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "simplecrawler": "^1.1.9",
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-scss": "^4.3.0",
+    "supertest": "^6.2.4",
+    "supertest-session": "^4.1.0",
+    "wait-on": "^6.0.1",
+    "walk-sync": "^3.0.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-middleware": "^5.3.3",
+    "webpack-manifest-plugin": "^5.0.0"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint:js",
+    "*.scss": "npm run lint:style"
+  },
+  "resolutions": {
+    "node-sass-middleware/node-sass": "^6.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "check-for-leaks",
+      "pre-commit": "lint-staged"
+    }
   }
 }
