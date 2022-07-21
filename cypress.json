@@ -1,0 +1,6 @@
+{
+  "projectId": "btwhet",
+  "requestTimeout": 10000,
+  "record": false,
+  "defaultCommandTimeout": 10000
+}
